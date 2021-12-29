@@ -27,6 +27,7 @@ module.exports.register = async (server, logger) => {
 
   // setup cache
   const cache = server.cache({
+    cache: 'redis',
     segment: 'sessions',
     expiresIn: 24 * 60 * 60 * 1000
   })
@@ -77,5 +78,5 @@ module.exports.register = async (server, logger) => {
   })
 
   // setup data
-  mockData.hydrate()
+  // mockData.hydrate()
 }
